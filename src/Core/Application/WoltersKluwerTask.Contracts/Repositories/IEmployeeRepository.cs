@@ -1,6 +1,6 @@
 ﻿using WoltersKluwerTask.Domain.Entities;
 
-namespace WoltersKluwerTask.Contracts.Repositories
+namespace WoltersKluwerTask.Application.Contracts.Repositories
 {
     public interface IEmployeeRepository : IAsyncRepository<Employee>
     {
