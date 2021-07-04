@@ -30,6 +30,8 @@ namespace WoltersKluwerTask.Application.CQRS.Employee.Commands.UpdateEmployee
                     request.Gender);
 
                 await _employeeRepository.UpdateAsync(updateEmployee);
+
+                return new UpdateEmployeeCommandResponse();
             }
 
             return new UpdateEmployeeCommandResponse(ResponseStatus.NotFound, "The employee does not exist");

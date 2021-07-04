@@ -27,7 +27,8 @@ namespace WoltersKluwerTask.UnitTests.CQRSTests.Commands
         [Fact]
         public async Task When_Pesel_Exists_In_Database_Return_Bad_Query()
         {
-            var command = new CreateEmployeeCommand {
+            var command = new CreateEmployeeCommand 
+            {
                 Pesel = new Pesel("12345678910")
             };
 
@@ -90,7 +91,13 @@ namespace WoltersKluwerTask.UnitTests.CQRSTests.Commands
                 .ReturnsAsync(lastEvidenceNumber);
 
             _mockEmployeeRepository
-                .Setup(x => x.AddAsync(It.IsAny<Employee>()))
+                .Setup(x => x.AddAsync(It.Is<Employee>(x=> 
+                    x.Id.Equals(new EmployeeId(0))
+                    && x.DateOfBirth == command.DateOfBirth
+                    && x.Pesel.Equals(command.Pesel)
+                    && x.Gender == command.Gender
+                    && x.EvidenceNumber.Equals(EvidenceNumber.NewEvidenceNumberByLast(lastEvidenceNumber))
+                    && x.Name.Equals(command.Name))))
                 .ReturnsAsync(new Employee(
                     emplayeeId, 
                     EvidenceNumber.NewEvidenceNumberByLast(lastEvidenceNumber), 
@@ -130,7 +137,13 @@ namespace WoltersKluwerTask.UnitTests.CQRSTests.Commands
                 .ReturnsAsync(lastEvidenceNumber);
 
             _mockEmployeeRepository
-                .Setup(x => x.AddAsync(It.IsAny<Employee>()))
+                .Setup(x => x.AddAsync(It.Is<Employee>(x =>
+                    x.Id.Equals(new EmployeeId(0))
+                    && x.DateOfBirth == command.DateOfBirth
+                    && x.Pesel.Equals(command.Pesel)
+                    && x.Gender == command.Gender
+                    && x.EvidenceNumber.Equals(EvidenceNumber.NewEvidenceNumberByLast(lastEvidenceNumber))
+                    && x.Name.Equals(command.Name))))
                 .ReturnsAsync(new Employee(
                     emplayeeId,
                     EvidenceNumber.NewEvidenceNumberByLast(lastEvidenceNumber),
@@ -148,7 +161,13 @@ namespace WoltersKluwerTask.UnitTests.CQRSTests.Commands
                 .Verify(x => x.GetLastEvidenceNumberAsync(), Times.Once());
 
             _mockEmployeeRepository
-                .Verify(x => x.AddAsync(It.IsAny<Employee>()), Times.Once());
+                .Verify(x => x.AddAsync(It.Is<Employee>(x =>
+                    x.Id.Equals(new EmployeeId(0))
+                    && x.DateOfBirth == command.DateOfBirth
+                    && x.Pesel.Equals(command.Pesel)
+                    && x.Gender == command.Gender
+                    && x.EvidenceNumber.Equals(EvidenceNumber.NewEvidenceNumberByLast(lastEvidenceNumber))
+                    && x.Name.Equals(command.Name))), Times.Once());
         }
     }
 }
