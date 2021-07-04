@@ -16,7 +16,7 @@ namespace WoltersKluwerTask.Application.CQRS.Employee.Commands.CreateEmployee
 
         }
 
-        public CreateEmployeeCommandResponse(EmployeeId employeeId)
+        public CreateEmployeeCommandResponse(EmployeeId employeeId) : base()
         {
             EmployeeId = employeeId;
         }

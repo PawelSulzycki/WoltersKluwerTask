@@ -7,7 +7,7 @@ namespace WoltersKluwerTask.Application.CQRS.Employee.Queries.GetAllEmployees
     {
         IEnumerable<Domain.Entities.Employee> Employees { get; set; }
 
-        public GetAllEmployeesQueryResponse(IEnumerable<Domain.Entities.Employee> employees)
+        public GetAllEmployeesQueryResponse(IEnumerable<Domain.Entities.Employee> employees) : base()
         {
             Employees = employees;
         }
