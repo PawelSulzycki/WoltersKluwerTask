@@ -15,6 +15,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WoltersKluwerTask.Domain", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WoltersKluwerTask.UnitTests", "tests\WoltersKluwerTask.UnitTests\WoltersKluwerTask.UnitTests.csproj", "{A951A296-80F7-43B1-8FAE-CA1000929541}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{6009BE42-7AD9-4465-B3BE-131C4628F3F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WoltersKluwerTask.Contracts", "src\Core\Application\WoltersKluwerTask.Contracts\WoltersKluwerTask.Contracts.csproj", "{B8627556-CDD7-4DFA-9CE2-7D4F546FD724}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +33,10 @@ Global
 		{A951A296-80F7-43B1-8FAE-CA1000929541}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A951A296-80F7-43B1-8FAE-CA1000929541}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A951A296-80F7-43B1-8FAE-CA1000929541}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8627556-CDD7-4DFA-9CE2-7D4F546FD724}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8627556-CDD7-4DFA-9CE2-7D4F546FD724}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8627556-CDD7-4DFA-9CE2-7D4F546FD724}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8627556-CDD7-4DFA-9CE2-7D4F546FD724}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -38,6 +46,8 @@ Global
 		{B7ABC388-7996-4460-A347-60AB3B3B8904} = {3D37E4D8-22C3-4F6C-9100-5B2590EE2324}
 		{2E5D5FBD-8057-49BB-A109-40445A14B4E0} = {B7ABC388-7996-4460-A347-60AB3B3B8904}
 		{A951A296-80F7-43B1-8FAE-CA1000929541} = {CA58196A-AA69-4A76-BBDC-8E4308FEC130}
+		{6009BE42-7AD9-4465-B3BE-131C4628F3F5} = {3D37E4D8-22C3-4F6C-9100-5B2590EE2324}
+		{B8627556-CDD7-4DFA-9CE2-7D4F546FD724} = {6009BE42-7AD9-4465-B3BE-131C4628F3F5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FB33D5DF-D89B-4513-BA0A-ECAFA20A4AAA}
