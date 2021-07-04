@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using WoltersKluwerTask.Api.Models.Employee;
 using WoltersKluwerTask.Application.Common;
 using WoltersKluwerTask.Application.CQRS.Employee.Commands.CreateEmployee;
+using WoltersKluwerTask.Application.CQRS.Employee.Commands.UpdateEmployee;
 using WoltersKluwerTask.Application.CQRS.Employee.Queries.GetAllEmployees;
 using WoltersKluwerTask.Application.CQRS.Employee.Queries.GetEmployee;
 using WoltersKluwerTask.Domain.Entities;
@@ -14,11 +15,11 @@ namespace WoltersKluwerTask.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class EmployeeController : Controller
+    public class EmployeesController : Controller
     {
         private readonly IMediator _mediator;
 
-        public EmployeeController(IMediator mediator)
+        public EmployeesController(IMediator mediator)
         {
             _mediator = mediator;
         }
@@ -62,6 +63,25 @@ namespace WoltersKluwerTask.Api.Controllers
             }
 
             return Ok(result.EmployeeId);
+        }
+
+        [HttpPut]
+        public async Task<ActionResult> Update([FromBody] UpdateEmployeeRequest request)
+        {
+            var result = await _mediator.Send(new UpdateEmployeeCommand()
+            {
+                DateOfBirth = request.DateOfBirth,
+                EmployeeId = new EmployeeId(request.Id),
+                Gender = request.Gender,
+                Name = new Name(request.FirstName, request.LastName)
+            });
+
+            if (result.Status == ResponseStatus.NotFound)
+            {
+                return NotFound(result.Message);
+            }
+
+            return NoContent();
         }
     }
 }
