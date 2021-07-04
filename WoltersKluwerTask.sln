@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WoltersKluwerTask.Applicati
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WoltersKluwerTask.Application.Common", "src\Core\Application\WoltersKluwerTask.Application.Common\WoltersKluwerTask.Application.Common.csproj", "{F6ED18C7-1D0F-4AE1-A397-B0510C925539}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{3730CE09-A9B9-46EE-A445-1CF2AAF9A4BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WoltersKluwerTask.Api", "src\Api\WoltersKluwerTask.Api\WoltersKluwerTask.Api.csproj", "{42558E2A-9782-498E-BED6-047BBFA4781A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +53,10 @@ Global
 		{F6ED18C7-1D0F-4AE1-A397-B0510C925539}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6ED18C7-1D0F-4AE1-A397-B0510C925539}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6ED18C7-1D0F-4AE1-A397-B0510C925539}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42558E2A-9782-498E-BED6-047BBFA4781A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42558E2A-9782-498E-BED6-047BBFA4781A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42558E2A-9782-498E-BED6-047BBFA4781A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42558E2A-9782-498E-BED6-047BBFA4781A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +70,8 @@ Global
 		{6ACB93D5-9FFC-459E-A6B6-A5A9EFE52D1E} = {6009BE42-7AD9-4465-B3BE-131C4628F3F5}
 		{AA5B49CE-DA7B-456F-BE8C-E560559A1898} = {6009BE42-7AD9-4465-B3BE-131C4628F3F5}
 		{F6ED18C7-1D0F-4AE1-A397-B0510C925539} = {6009BE42-7AD9-4465-B3BE-131C4628F3F5}
+		{3730CE09-A9B9-46EE-A445-1CF2AAF9A4BB} = {BCAD767A-B66A-4810-93EB-C5B24A101F44}
+		{42558E2A-9782-498E-BED6-047BBFA4781A} = {3730CE09-A9B9-46EE-A445-1CF2AAF9A4BB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FB33D5DF-D89B-4513-BA0A-ECAFA20A4AAA}
