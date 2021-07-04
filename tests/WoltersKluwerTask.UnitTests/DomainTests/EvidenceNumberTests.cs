@@ -52,7 +52,7 @@ namespace WoltersKluwerTask.UnitTests.DomainTests
         }
 
         [Fact]
-        public void When_Value_Has_8_Characters_Create_Object()
+        public void When_Value_Is_Correct_Create_Object()
         {
             var value = "00000001";
 
