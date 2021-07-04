@@ -1,12 +1,11 @@
 ﻿using MediatR;
-using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using WoltersKluwerTask.Application.Contracts.Repositories;
 
 namespace WoltersKluwerTask.Application.CQRS.Employee.Queries.GetAllEmployees
 {
-    public class GetAllEmployeesQueryHandler : IRequestHandler<GetAllEmployeesQuery, IEnumerable<Domain.Entities.Employee>>
+    public class GetAllEmployeesQueryHandler : IRequestHandler<GetAllEmployeesQuery, GetAllEmployeesQueryResponse>
     {
         private readonly IEmployeeRepository _employeeRepository;
 
@@ -15,11 +14,11 @@ namespace WoltersKluwerTask.Application.CQRS.Employee.Queries.GetAllEmployees
             _employeeRepository = employeeRepository;
         }
 
-        public async Task<IEnumerable<Domain.Entities.Employee>> Handle(GetAllEmployeesQuery request, CancellationToken cancellationToken)
+        public async Task<GetAllEmployeesQueryResponse> Handle(GetAllEmployeesQuery request, CancellationToken cancellationToken)
         {
             var employees = await _employeeRepository.GetAllAsync();
 
-            return employees;
+            return new GetAllEmployeesQueryResponse(employees);
         }
     }
 }
