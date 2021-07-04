@@ -67,12 +67,13 @@ namespace WoltersKluwerTask.Api.Controllers
         }
 
         [HttpPut]
-        public async Task<ActionResult> Update([FromBody] UpdateEmployeeRequest request)
+        [Route("{id}")]
+        public async Task<ActionResult> Update([FromQuery] int id, [FromBody] UpdateEmployeeRequest request)
         {
             var result = await _mediator.Send(new UpdateEmployeeCommand()
             {
                 DateOfBirth = request.DateOfBirth,
-                EmployeeId = new EmployeeId(request.Id),
+                EmployeeId = new EmployeeId(id),
                 Gender = request.Gender,
                 Name = new Name(request.FirstName, request.LastName)
             });
