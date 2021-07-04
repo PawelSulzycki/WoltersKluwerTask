@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using WoltersKluwerTask.Api.Models.Employee;
 using WoltersKluwerTask.Application.Common;
 using WoltersKluwerTask.Application.CQRS.Employee.Commands.CreateEmployee;
+using WoltersKluwerTask.Application.CQRS.Employee.Commands.DeleteEmployee;
 using WoltersKluwerTask.Application.CQRS.Employee.Commands.UpdateEmployee;
 using WoltersKluwerTask.Application.CQRS.Employee.Queries.GetAllEmployees;
 using WoltersKluwerTask.Application.CQRS.Employee.Queries.GetEmployee;
@@ -80,6 +81,18 @@ namespace WoltersKluwerTask.Api.Controllers
             {
                 return NotFound(result.Message);
             }
+
+            return NoContent();
+        }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public async Task<ActionResult> DeleteById([FromQuery] int id)
+        {
+            await _mediator.Send(new DeleteEmployeeCommand()
+            {
+                EmployeeId = new EmployeeId(id)
+            });
 
             return NoContent();
         }
