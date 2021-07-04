@@ -18,7 +18,7 @@ namespace WoltersKluwerTask.Application.CQRS.Employee.Commands.CreateEmployee
 
         public async Task<CreateEmployeeCommandResponse> Handle(CreateEmployeeCommand request, CancellationToken cancellationToken)
         {
-            var exist = await _employeeRepository.ExistByPeselAsync(request.Pesel.Value);
+            var exist = await _employeeRepository.ExistByPeselAsync(request.Pesel);
 
             if (!exist)
             {

@@ -7,9 +7,9 @@ namespace WoltersKluwerTask.Application.CQRS.Employee.Commands.CreateEmployee
 {
     public class CreateEmployeeCommand : IRequest<CreateEmployeeCommandResponse>
     {
-        public Pesel Pesel { get; private set; }
-        public DateTime DateOfBirth { get; private set; }
-        public Name Name { get; private set; }
-        public Gender Gender { get; private set; }
+        public Pesel Pesel { get; set; }
+        public DateTime DateOfBirth { get; set; }
+        public Name Name { get; set; }
+        public Gender Gender { get; set; }
     }
 }
