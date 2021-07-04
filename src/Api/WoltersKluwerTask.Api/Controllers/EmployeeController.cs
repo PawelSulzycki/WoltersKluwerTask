@@ -2,7 +2,9 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using WoltersKluwerTask.Api.Models.Employee;
 using WoltersKluwerTask.Application.Common;
+using WoltersKluwerTask.Application.CQRS.Employee.Commands.CreateEmployee;
 using WoltersKluwerTask.Application.CQRS.Employee.Queries.GetAllEmployees;
 using WoltersKluwerTask.Application.CQRS.Employee.Queries.GetEmployee;
 using WoltersKluwerTask.Domain.Entities;
@@ -41,6 +43,25 @@ namespace WoltersKluwerTask.Api.Controllers
             }
 
             return Ok(result.Employee);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<EmployeeId>> Create([FromBody] CreateEmployeeRequest request)
+        {
+            var result = await _mediator.Send(new CreateEmployeeCommand()
+            {
+                DateOfBirth = request.DateOfBirth,
+                Gender = request.Gender,
+                Name = new Name(request.FirstName, request.LastName),
+                Pesel = new Pesel(request.Pesel)
+            });
+
+            if(result.Status == ResponseStatus.BadQuery)
+            {
+                return BadRequest(result.Message);
+            }
+
+            return Ok(result.EmployeeId);
         }
     }
 }
