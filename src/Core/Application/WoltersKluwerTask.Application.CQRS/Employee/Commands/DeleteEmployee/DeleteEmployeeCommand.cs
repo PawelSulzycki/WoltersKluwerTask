@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MediatR;
+using WoltersKluwerTask.Domain.ValueObjects;
 
 namespace WoltersKluwerTask.Application.CQRS.Employee.Commands.DeleteEmployee
 {
-    class DeleteEmployeeCommand
+    public class DeleteEmployeeCommand : IRequest<DeleteEmployeeCommandResponse>
     {
+        public EmployeeId EmployeeId { get; set; }
     }
 }
