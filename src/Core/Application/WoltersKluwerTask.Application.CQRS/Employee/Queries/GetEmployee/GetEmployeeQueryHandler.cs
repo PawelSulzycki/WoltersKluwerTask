@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
+using WoltersKluwerTask.Application.Common;
 using WoltersKluwerTask.Application.Contracts.Repositories;
 
 namespace WoltersKluwerTask.Application.CQRS.Employee.Queries.GetEmployee
@@ -18,7 +19,10 @@ namespace WoltersKluwerTask.Application.CQRS.Employee.Queries.GetEmployee
         {
             var employee = await _employeeRepository.GetByIdAsync(request.EmployeeId.Value);
 
-            return new GetEmployeeQueryResponse(employee);
+            if(employee != null)
+                return new GetEmployeeQueryResponse(employee);
+
+            return new GetEmployeeQueryResponse(ResponseStatus.NotFound, "The employee does not exist");
         }
     }
 }
