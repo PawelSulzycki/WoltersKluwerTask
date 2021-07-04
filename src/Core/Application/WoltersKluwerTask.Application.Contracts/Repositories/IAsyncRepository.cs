@@ -12,7 +12,7 @@ namespace WoltersKluwerTask.Application.Contracts.Repositories
 
         Task<T> AddAsync(T entity);
         Task UpdateAsync(T entity);
-        Task RemoveAsync(T entity);
+        Task RemoveByIdAsync(int id);
 
         Task<IEnumerable<T>> GetAllAsync();
         Task<IEnumerable<T>> GetWhereAsync(Expression<Func<T, bool>> predicate);
