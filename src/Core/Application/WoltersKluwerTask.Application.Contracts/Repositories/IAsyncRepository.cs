@@ -7,17 +7,17 @@ namespace WoltersKluwerTask.Application.Contracts.Repositories
 {
     public interface IAsyncRepository<T> where T : class
     {
-        Task<T> GetById(int id);
-        Task<T> FirstOrDefault(Expression<Func<T, bool>> predicate);
+        Task<T> GetByIdAsync(int id);
+        Task<T> FirstOrDefaultAsync(Expression<Func<T, bool>> predicate);
 
-        Task Add(T entity);
-        Task Update(T entity);
-        Task Remove(T entity);
+        Task AddAsync(T entity);
+        Task UpdateAsync(T entity);
+        Task RemoveAsync(T entity);
 
-        Task<IEnumerable<T>> GetAll();
-        Task<IEnumerable<T>> GetWhere(Expression<Func<T, bool>> predicate);
+        Task<IEnumerable<T>> GetAllAsync();
+        Task<IEnumerable<T>> GetWhereAsync(Expression<Func<T, bool>> predicate);
 
-        Task<int> CountAll();
-        Task<int> CountWhere(Expression<Func<T, bool>> predicate);
+        Task<int> CountAllAsync();
+        Task<int> CountWhereAsync(Expression<Func<T, bool>> predicate);
     }
 }
