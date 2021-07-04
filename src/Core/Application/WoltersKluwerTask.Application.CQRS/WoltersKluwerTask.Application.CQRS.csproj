@@ -5,16 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Employee\Commands\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="MediatR" Version="9.0.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\Domain\WoltersKluwerTask.Domain\WoltersKluwerTask.Domain.csproj" />
+    <ProjectReference Include="..\WoltersKluwerTask.Application.Common\WoltersKluwerTask.Application.Common.csproj" />
     <ProjectReference Include="..\WoltersKluwerTask.Application.Contracts\WoltersKluwerTask.Application.Contracts.csproj" />
   </ItemGroup>
 

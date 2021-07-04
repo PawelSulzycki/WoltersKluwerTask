@@ -20,6 +20,13 @@ namespace WoltersKluwerTask.Domain.ValueObjects
             return new EvidenceNumber(result);
         }
 
+        public static EvidenceNumber NewEvidenceNumberByLast(int lastEvidenceNumber)
+        {
+            lastEvidenceNumber++;
+
+            return Create(lastEvidenceNumber);
+        }
+
         protected override IEnumerable<object> GetEqualityComponents()
         {
             yield return Value;

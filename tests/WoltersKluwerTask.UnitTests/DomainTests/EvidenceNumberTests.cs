@@ -80,5 +80,15 @@ namespace WoltersKluwerTask.UnitTests.DomainTests
 
             evidenceNumber.Value.Should().Be("01234567");
         }
+
+        [Fact]
+        public void New_Evidence_Number_For_Last_Evidence_Number_2_Return_00000003()
+        {
+            var value = 2;
+
+            var evidenceNumber = EvidenceNumber.NewEvidenceNumberByLast(value);
+
+            evidenceNumber.Value.Should().Be("00000003");
+        }
     }
 }
