@@ -4,20 +4,13 @@ using WoltersKluwerTask.Domain.Ddd;
 
 namespace WoltersKluwerTask.Domain.ValueObjects
 {
-    public class EvidenceNumber : ValueObject
+    public class Pesel : ValueObject
     {
         public string Value { get; private set; }
 
-        public EvidenceNumber(string value)
+        public Pesel(string value)
         {
-            Value = Guard.Argument(value, nameof(value)).NotEmpty().NotNull().Length(8);
-        }
-
-        public EvidenceNumber Create(int value)
-        {
-            var result = $"{value:00000000}";
-
-            return new EvidenceNumber(result);
+            Value = Guard.Argument(value, nameof(value)).NotEmpty().NotNull().Length(11).Matches("^[0-9]*$");
         }
 
         protected override IEnumerable<object> GetEqualityComponents()
