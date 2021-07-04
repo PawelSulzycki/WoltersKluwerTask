@@ -13,7 +13,7 @@ namespace WoltersKluwerTask.Domain.ValueObjects
             Value = Guard.Argument(value, nameof(value)).NotEmpty().NotNull().Length(8);
         }
 
-        public EvidenceNumber Create(int value)
+        public static EvidenceNumber Create(int value)
         {
             var result = $"{value:00000000}";
 
