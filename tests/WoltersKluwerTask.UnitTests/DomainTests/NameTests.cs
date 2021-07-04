@@ -74,7 +74,7 @@ namespace WoltersKluwerTask.UnitTests.DomainTests
         }
 
         [Fact]
-        public void When_Last_Name_Has_More_Characters_Than_51_Throw_Argument_Exception()
+        public void When_Last_Name_Has_More_Characters_Than_50_Throw_Argument_Exception()
         {
             var firstName = "TestFirst";
 
