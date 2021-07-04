@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WoltersKluwerTask.Application.Contracts", "src\Core\Application\WoltersKluwerTask.Application.Contracts\WoltersKluwerTask.Application.Contracts.csproj", "{6ACB93D5-9FFC-459E-A6B6-A5A9EFE52D1E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WoltersKluwerTask.Application.CQRS", "src\Core\Application\WoltersKluwerTask.Application.CQRS\WoltersKluwerTask.Application.CQRS.csproj", "{AA5B49CE-DA7B-456F-BE8C-E560559A1898}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{6ACB93D5-9FFC-459E-A6B6-A5A9EFE52D1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6ACB93D5-9FFC-459E-A6B6-A5A9EFE52D1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6ACB93D5-9FFC-459E-A6B6-A5A9EFE52D1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA5B49CE-DA7B-456F-BE8C-E560559A1898}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA5B49CE-DA7B-456F-BE8C-E560559A1898}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA5B49CE-DA7B-456F-BE8C-E560559A1898}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA5B49CE-DA7B-456F-BE8C-E560559A1898}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +54,7 @@ Global
 		{A951A296-80F7-43B1-8FAE-CA1000929541} = {CA58196A-AA69-4A76-BBDC-8E4308FEC130}
 		{6009BE42-7AD9-4465-B3BE-131C4628F3F5} = {3D37E4D8-22C3-4F6C-9100-5B2590EE2324}
 		{6ACB93D5-9FFC-459E-A6B6-A5A9EFE52D1E} = {6009BE42-7AD9-4465-B3BE-131C4628F3F5}
+		{AA5B49CE-DA7B-456F-BE8C-E560559A1898} = {6009BE42-7AD9-4465-B3BE-131C4628F3F5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FB33D5DF-D89B-4513-BA0A-ECAFA20A4AAA}
