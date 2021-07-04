@@ -5,5 +5,6 @@ namespace WoltersKluwerTask.Domain.Entities
 {
     public class Employee : Entity<EmployeeId>
     {
+        public EvidenceNumber EvidenceNumber { get; private set; }
     }
 }
